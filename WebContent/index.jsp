@@ -23,6 +23,7 @@
 			<li>최윤정</li>
 			<li>임정인</li>
 			<li>조동준</li>
+			<li>충돌내기</li>
 		</ul>
 	</div>
 </body>
