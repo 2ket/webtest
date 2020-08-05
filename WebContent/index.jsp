@@ -21,6 +21,7 @@
 			<li>다</li>
 			<li>라</li>
 			<li>최윤정</li>
+			<li>임정인</li>
 		</ul>
 	</div>
 </body>
