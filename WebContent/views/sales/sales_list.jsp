@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${root }/CSS/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="${root }/css/bootstrap/bootstrap.min.css">
 </head>
 <body>
 	<div class="container" id="sales_list">
