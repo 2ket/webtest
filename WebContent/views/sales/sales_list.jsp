@@ -27,7 +27,7 @@
 			<input type="hidden" value="위에 li값 가져오기" name="sales_type">
 			<!-- <input type="text" placeholder="지역명을 입력하세요.">
 			<input type="submit" value="검색" class="btn btn-warning"> -->
-			
+
 			<div class="input-group mb-3">
 				<select class="custom-select col-md-1">
 					<option value="">옵션</option>
