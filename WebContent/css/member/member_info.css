@@ -32,21 +32,4 @@
 	padding-left: 15px;
 }
 
-form {
-	width: 85%;
-	text-align: left;
-	display: inline-block;
-	padding-top: 15px;
-/* 	border: 1px solid red; */
-}
 
-#input-sm {
-	width: 40%;
-	display: inline-block;
-	border: 1px solid black;
-	border-radius: 5px;
-}
-
-form .btn-sh {
-	width: 15%;
-}

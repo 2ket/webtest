@@ -8,7 +8,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${root}/css/bootstrap/bootstrap.css">
-<link rel="stylesheet" href="${root}/css/member/member_update.css">
+<link rel="stylesheet" href="${root}/css/member/member_info.css">
+<style type="text/css">
+	form {
+		width: 85%;
+		text-align: left;
+		display: inline-block;
+		padding-top: 15px;
+/* 		border: 1px solid red; */
+	}
+	
+	#input-sm {
+		width: 40%;
+		display: inline-block;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	
+	form .btn-sh {
+		width: 100px;
+	}
+</style>
 </head>
 <body>
 	<div id="content">
