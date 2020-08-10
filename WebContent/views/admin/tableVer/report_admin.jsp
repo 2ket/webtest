@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="${root}/css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="${root}/css/admin/report_admin.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>신고관리</title>
 <style type="text/css">
 
 </style>
 </head>
 <body>
 	<div id="admin_container">
-		<div id="title">신고관리</div>
+		<div id="title" class="text-success"><h3>&#91;신고관리&#93;</h3></div>
+		<span  style="margin-top:0px;"class="badge badge-success">관리자</span>
 		<table>
 	
 				<tr>
@@ -35,7 +36,7 @@
 					<td>dd</td>
 				</tr>
 			
-				<tr>
+				<tr class="table-success">
 					<td>dd</td>
 					<td>dd</td>
 					<td>dd</td>
@@ -53,7 +54,7 @@
 					<td>dd</td>
 				</tr>
 			
-				<tr>
+				<tr class="table-success">
 					<td>dd</td>
 					<td>dd</td>
 					<td>dd</td>
@@ -69,7 +70,7 @@
 					<td>dd</td>
 					<td>dd</td>
 				</tr>
-				<tr>
+				<tr class="table-success">
 					<td>dd</td>
 					<td>dd</td>
 					<td>dd</td>

@@ -6,14 +6,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원관리</title>
 <link rel="stylesheet" href="${root}/css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="${root}/css/admin/member_admin.css">
+<link rel="stylesheet" href="${root}/css/admin/notice_list.css">
+<script type="text/javascript" src="${root}/javascript/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+function memberDrop(obj){
+	var drop=[];
+	
+	$("input[name=drop]:checked").each(function(){
+		drop.push($(this).val());
+	});
+	
+	alert(drop);
+	
+}
+</script>
 </head>
 <body>
 <form action="#" method="POST" onsubmit="">
 	<div id="admin_container">
-		<div id="title">회원관리</div>
+		<div id="title" class="text-success"><h3>&#91;회원관리&#93;</h3></div>
+		<span  style="margin-top:0px;" class="badge badge-success">관리자</span>
 		<table>
 	
 				<tr>
@@ -32,7 +47,7 @@
 					<td>dd</td>
 					<td>dd</td>
 				</tr>
-				<tr>
+				<tr class="table-success">
 					<td><input type="checkbox" value="" name=""/></td>
 					<td>dd</td>
 					<td>dd</td>
@@ -48,7 +63,7 @@
 					<td>dd</td>
 					<td>dd</td>
 				</tr>
-				<tr>
+				<tr class="table-success">
 					<td><input type="checkbox" value="" name=""/></td>
 					<td>dd</td>
 					<td>dd</td>
@@ -65,7 +80,7 @@
 					<td>dd</td>
 				</tr>
 		</table>
-		<input type="submit" value="회원탈퇴"/>
+		<input type="submit"  class="btn btn-success" value="회원탈퇴"/>
 	</div>
 </form>
 </body>
