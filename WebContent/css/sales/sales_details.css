@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body{
+#details{
 	width:700px;
 	margin: 50px auto;
 	border:solid 0px red;
@@ -80,44 +80,42 @@ img{
 #sales_info{
 	width:700px;
 	height:60px;
-	margin-top:25px;
+	margin:40px 0px 60px;;
 	border:solid 0px blue;
 	font-size:15px;
 }
 
 #sales_info img{
 	float:left;
+	margin-top:10px;
 }
 
 #sales_info>div{
-	width:500px;
+	width:550px;
 	float:left;
 	border:solid 0px blue;
-	margin: 10px 30px;
+	margin: 10px 30px 10px 60px;
 	overflow:hidden;
 }
 
-#sales_info .col1{
-	float:left;
+#sales_info td{
+	width:150px;
+	text-align:center;
 }
 
-#sales_info .col1 span:first-child,
-#sales_info .col2 span:first-child{
+#sales_info .info_name{
 	border-right:solid 2px #c0c0c0;
-	padding-right: 25px;
 }
 
-#sales_info .col1 span:last-child,
-#sales_info .col2 span:last-child{
-	padding-left: 25px;
-	margin-right: 60px;
+#sales_info .row1{
+	margin-bottom:20px;
 }
 
 #sales_sum,#sales_index,
 #sales_content{
 	width:700px;
 	border:solid 0px blue;
-	margin-top:20px;
+	margin-top:30px;
 }
 
 #sales_sum>div:first-child,
