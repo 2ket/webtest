@@ -18,7 +18,18 @@
 	$(function(){
 		//이미지 더 보기 클릭시
 		$(".img_more").click(function(){
-			alert("ok");
+			//alert("ok");
+			$(".imgs").show();
+			$(".img_small").show();
+			$(".img_more").hide();
+		})
+		
+		//이미지 줄여보기?
+		$(".img_small").click(function(){
+			//alert("ok");
+			$(".imgs").hide();
+			$(".img_small").hide();
+			$(".img_more").show();
 		})
 		
 		//중개인 더보기 클릭시
@@ -166,13 +177,18 @@
 		
 		<!-- 매물 이미지 -->
 		<div id="sales_img">
-			<div class="img_all">	
+			<div class="img_all">
+				<%-- <c:forEach ></c:forEach>	 --%>	
 				<div class="img"><img/></div>
 				<div class="img"><img/></div>
 				<div class="img"><img/></div>
 				<!-- 3개 이상일 경우 -->
+				<%-- <c:if test=""/> --%>
 				<div class="img_more"><img src="${root }/img/next1.png" width="30px" height="30px"/></div>	<!-- 꺽은 모양;3개 이상시 보임 -->
-				<div class="img"><img/></div>		<!-- 3개이상시 클릭하면-->
+				<div class="imgs"><img/></div>		<!-- 3개이상시 클릭하면-->
+				<div class="imgs"><img/></div>	
+				<div class="imgs"><img/></div>	
+				<div class="img_small"><img src="${root }/img/next2.png" width="30px" height="30px"/></div>
 			</div>
 		</div>
 		
