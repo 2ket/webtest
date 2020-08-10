@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 <html>
@@ -15,6 +16,8 @@
 	<div id="admin_container">
 		<h3 class="text-success">[공지사항]</h3>
 		<span class="badge badge-success">관리자</span>
+		<br/>
+		<button class="btn btn-success" type="button" style = "margin-bottom: 5px;">글작성</button>
 		<table>
 				<tr>
 					<th>1</th>
@@ -88,8 +91,34 @@
 			      <td>Column content</td>
     			</tr>
 		</table>
-
-		<button class="btn btn-success" type="button" style = "margin-top: 5px;">글작성</button>
+		
+<%-- 		<!-- 페이지 번호 들어갈 자리. -->
+		<div align = "center">
+			<fmt:parseNumber var = "pageCount" value = "${count / boardSize + (count % boardSize == 0 ? 0 : 1)}" integerOnly = "true"/>
+			<c:set var = "pageBlock" value = "${5}"/>
+			
+			<fmt:parseNumber var = "result" value = "${(currentPage - 1) / pageBlock}" integerOnly = "true"/>
+			<c:set var = "startPage" value = "${result * pageBlock + 1}"/>
+			<c:set var = "endPage" value = "${startPage + pageBlock - 1}"/>
+			${startPage}, ${endPage}
+			
+			<c:if test = "${endPage > pageCount}">
+				<c:set var = "endPage" value = "${pageCount}"/>
+			</c:if>
+			${startPage}, ${endPage}
+			
+			<c:if test = "${startPage > pageBlock}">
+				<a href = "${root}/notice/notice_list.do?pageNumber=${startPage - pageBlock}">[이전]</a>
+			</c:if>
+			
+			<c:forEach var = "i" begin = "${startPage}" end = "${endPage}">
+				<a href = "${root}/notice/notice_list.do?pageNumber=${i}">[${i}]</a>
+			</c:forEach>
+			
+			<c:if test = "${endPage < pageCount}">
+				<a href = "${root}/notice/notice_list.do?pageNumber=${startPage + pageBlock}">[다음]</a>
+			</c:if>
+		</div> --%>
 	</div>
 </form>
 </body>
