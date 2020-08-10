@@ -16,6 +16,22 @@
 <script type="text/javascript" src="${root }/javascript/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	$(function(){
+		//스크랩 클릭시
+		$("input:button[name=scrap_btn]").one("click",function(){
+			alert("ok");
+			$("input:button[name=scrap_btn]").css("color","#212529");
+			$("input:button[name=scrap_btn]").css("background-color","#ffc107");
+			$("input:button[name=scrap_btn]").css("background-color","#ffc107");
+		})
+		
+		//신고하기 클릭시
+		$("input:button[name=report_btn]").click(function(){
+			var check=confirm("이 매물을 신고하시겠습니까?");
+			if(check==true){
+				alert("ok");
+			}
+		})
+		
 		//이미지 더 보기 클릭시
 		$(".img_more").click(function(){
 			//alert("ok");
@@ -35,6 +51,35 @@
 		//중개인 더보기 클릭시
 		$("input:button[name=member_info]").click(function(){
 			alert("ok");
+		})
+		
+		//매물 더보기 클릭시
+		$("input:button[name=more_sales]").click(function(){
+			alert("ok");
+		})
+		
+		//수정 클릭시
+		$("input:button[name=sales_update]").click(function(){
+			var check=confirm("매물 정보를 수정하시겠습니까?");
+			if(check==true){
+				alert("ok");
+			}
+		})
+		
+		//신고처리 클릭시
+		$("input:button[name=report_update]").click(function(){
+			var check=confirm("매물 정보를 신고처리하시겠습니까?");
+			if(check==true){
+				alert("ok");
+			}
+		})
+		
+		//삭제 클릭시
+		$("input:button[name=sales_delete]").click(function(){
+			var check=confirm("매물 정보 게시글을 삭제하시겠습니까?");
+			if(check==true){
+				alert("ok");
+			}
 		})
 	})
 </script>
