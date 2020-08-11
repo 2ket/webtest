@@ -10,6 +10,75 @@
 <link rel="stylesheet" href="${root }/css/bootstrap/bootstrap.min.css">
 <script type="text/javascript" src="${root }/javascript/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="${root }/javascript/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript">
+function createXHR(){
+	if(window.XMLHttpRequest){
+		return new XMLHttpRequest;
+	}else{
+		return new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+
+var xhr=null;
+
+function sendRequest(method, url, param, callback){	//넘어온 값 : post, xhr.txt, msg, fromServer()
+	var httpMethod=method.toUpperCase();
+	var httpUrl=url;
+	var httpParam=(param==null || param=="") ? null : param
+	if(httpMethod=="GET" && httpParam != null){
+		httpUrl +="?"+httpParam;
+	}
+	
+	//alert(httpMethod+", "+httpUrl+", "+httpParam);
+	xhr=createXHR();
+	xhr.open(httpMethod, httpUrl, true);
+	//xhr.setRequestHeader~는 POST일때만 적용되고 GET이면 점프한다
+	//xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+	xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+	xhr.setRequestHeader("Authorization", "KakaoAK 18514d37ace0e69349e647543ecf89f8");
+	xhr.send(httpMethod=="POST" ? httpParam : null);
+	xhr.onreadystatechange=callback;
+	
+}
+
+
+
+	var arr=new Array();
+	function toServer(){
+		var addr=document.getElementById("addr").value;
+		//arr.push(addr);
+		
+		var url="https://dapi.kakao.com/v2/local/search/address.json";
+		var param="query="+addr;
+		
+		//alert(url+", "+param);
+		sendRequest("POST", url, param, fromServer);
+	}
+ 	function fromServer(){
+		//arr.push(xhr.readyState+","+xhr.status);
+		if(xhr.readyState==4 && xhr.status==200){
+			//arr.push(xhr.responseText);
+			processJson();
+		}
+		//alert(arr);
+	}
+ 	function processJson(){
+		var obj=JSON.parse(xhr.responseText);
+		var y=obj.documents[0].y;
+		var x=obj.documents[0].x;
+		
+		
+		//arr.push(x+", "+y);
+		//alert(arr);
+		
+		var map=document.getElementById("map");
+		map.innerHTML+="주소";
+		map.innerHTML+=y+" "+x;
+		
+	}
+	
+	
+</script>
 </head>
 <body>
 	<div class="container" id="sales_list">
@@ -65,11 +134,14 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="inputGroup-sizing-sm">주소찾기</span>
 				  </div>
-				  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+				  <input type="text" class="form-control" id="addr" aria-describedby="inputGroup-sizing-sm">
 				  <div class="input-group-append">
-				    <button class="btn btn-outline-secondary" type="button" id="button-addon2" aria-describedby="inputGroup-sizing-sm">Button</button>
+				    <button class="btn btn-outline-secondary" type="button" id="button-addon2" aria-describedby="inputGroup-sizing-sm" onclick="toServer()">검색</button>
 				  </div>
 				</div>
+				
+				<div id="map"></div>
+				
 			</div>
 			<div class="col-md-3">
 				<div class="input-group input-group-sm mb-2">

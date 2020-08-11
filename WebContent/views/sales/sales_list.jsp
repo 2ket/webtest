@@ -35,10 +35,10 @@
 					<option value="rent_year">전세</option>
 					<option value="rent_month">월세</option>
 				</select>
-			  <input type="text" class="form-control col-md-4" placeholder="지역명을 입력하세요." aria-label="지역명을 입력하세요." aria-describedby="button-addon2">
-			  <div class="input-group-append">
-			    <button class="btn btn-outline-warning" type="submit" id="button-addon2"><strong>검색</strong></button>
-			  </div>
+			  	<input type="text" class="form-control col-md-4" placeholder="지역명을 입력하세요." aria-label="지역명을 입력하세요." aria-describedby="button-addon2">
+			 	<div class="input-group-append">
+			    	<button class="btn btn-outline-warning" type="submit" id="button-addon2"><strong>검색</strong></button>
+			 	</div>
 			</div>
 			
 			<input type="range"> <label>가격</label>
